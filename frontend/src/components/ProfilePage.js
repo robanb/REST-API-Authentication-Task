@@ -60,19 +60,19 @@ export default function ProfilePage() {
 				<div className="grid grid-cols gap-4 place-items-center">
 					<div className=" h-100 w-96 bg-opacity-70 bg-gray-900 rounded-2xl shadow-5xl shadow-violet-900 mt-16 ">
 						<div className="max-w-sm">
-							<Flowbite.Card className="bg-gray-600">
+							<Flowbite.Card className="bg-opacity-70 border-violet-700">
 								<div className="flex flex-col items-center pb-5">
 									<Flowbite.Avatar rounded={true} />
 									<h1 className="mb-1 text-4xl font-medium text-gray-900">
 										{userData.name}
 									</h1>
-									<span className="text-sm font-bold text-white ">
+									<span className="text-sm font-bold text-gray-900 ">
 										<p>Email: {userData.email}</p>
 									</span>
-									<span className="text-sm font-bold text-white ">
+									<span className="text-sm font-bold text-gray-900 ">
 										<p>D.O.B: {userData.birthDate}</p>
 									</span>
-									<span className="text-sm font-bold text-white ">
+									<span className="text-sm font-bold text-gray-900 ">
 										<p>Profession:{userData.profession} </p>
 									</span>
 									<div className="mt-4 flex space-x-3 lg:mt-6"></div>
