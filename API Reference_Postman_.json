@@ -1,0 +1,1216 @@
+{
+	"info": {
+		"_postman_id": "2cc4fb03-77dd-47b7-bdad-49c1e5e8ae79",
+		"name": "API Reference: User Registration & Authentication",
+		"description": "**This is a REST API Implementation Documentation on user registration and authentication.**\n\n[GitHub Repository](https://github.com/robanb/Backend-Task)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24142763"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "User Three",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "userthree@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "12-15-2000",
+							"type": "text"
+						},
+						{
+							"key": "profession",
+							"value": "Artist",
+							"type": "text"
+						},
+						{
+							"key": "profileImage",
+							"type": "file",
+							"src": "/E:/backup photo/ContactPhoto-IMG_20210824_202542.jpg"
+						},
+						{
+							"key": "password",
+							"value": "user3@pass",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Registration Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "User One",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "userone@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "12-15-2000",
+									"type": "text"
+								},
+								{
+									"key": "profession",
+									"value": "Singer",
+									"type": "text"
+								},
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/E:/backup photo/20211228_233157.jpg"
+								},
+								{
+									"key": "password",
+									"value": "user1@pass",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-EYCnW5W/3F9bJRpnm+1jQ44Dxdc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Nov 2022 20:48:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User Registration Successful\"\n}"
+				},
+				{
+					"name": "Same User Trying to Register Twice",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "User One",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "userone@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "12-15-2000",
+									"type": "text"
+								},
+								{
+									"key": "profession",
+									"value": "Singer",
+									"type": "text"
+								},
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/E:/backup photo/20211228_233157.jpg"
+								},
+								{
+									"key": "password",
+									"value": "user1@pass",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-GhgCp/DZnJI7Iv3e2WiQ5Bv4jpI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Nov 2022 20:50:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User Already Exist!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"tp@gmail.com\",\r\n    \"password\": \"Tshering@pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Registered User Authentication",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"userone@gmail.com\",\r\n    \"password\": \"user1@pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "263"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"107-mhcIz1XcL2zpAAAeTd6HnYeZtA4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Nov 2022 20:58:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Authentication Successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJvbmVAZ21haWwuY29tIiwidXNlcklEIjoiNjM2NDI5MTUyY2UxZmIxMTY4ZTdmMTQ2IiwiaWF0IjoxNjY3NTA5MDgzLCJleHAiOjE2Njc1MTI2ODN9.C4EHyKvpj1wYcEdRwFoEZ4CQn0lED1HbTHnXhBIeKAw\"\n}"
+				},
+				{
+					"name": "Non-Registered User Login Attempt",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user000@gmail.com\",\r\n    \"password\": \"wrongPassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-4NLrLSE7fkdC0DPIsDojIHh/phE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Nov 2022 20:55:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User doesn't exist!\"\n}"
+				},
+				{
+					"name": "Authentication Attempt with wrong Password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"userone@gmail.com\",\r\n    \"password\": \"wrongpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-NXznaS9EmETXfcsCPQW7++ycITA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 03:59:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password Didn't Match !\"\n}"
+				},
+				{
+					"name": "User Authentication Attempt with Previous Password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"robanbth@gmail.com\",\r\n    \"password\": \"user1@pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-NXznaS9EmETXfcsCPQW7++ycITA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 04:37:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password Didn't Match !\"\n}"
+				},
+				{
+					"name": "User Authentication Attempt with Previous (Old) Email & Password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"userone@gmail.com\",\r\n    \"password\": \"user1@pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-4NLrLSE7fkdC0DPIsDojIHh/phE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 04:40:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User doesn't exist!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User Profile Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJvbmVAZ21haWwuY29tIiwidXNlcklEIjoiNjM2NDI5MTUyY2UxZmIxMTY4ZTdmMTQ2IiwiaWF0IjoxNjY3NTM1Nzc3LCJleHAiOjE2Njc1MzkzNzd9.fNH4LNZDevpBHA3R9mi9eXC8haFF2-GBoS9VpA7AiC0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"_id"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example: Get User Profile Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJvbmVAZ21haWwuY29tIiwidXNlcklEIjoiNjM2NDI5MTUyY2UxZmIxMTY4ZTdmMTQ2IiwiaWF0IjoxNjY3NTM0NzE1LCJleHAiOjE2Njc1MzgzMTV9.-Y1lpmYoCZGsaSTTAyuCxBRFGIRNv2jy7jY0j_tjSSY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/636429152ce1fb1168e7f146",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"636429152ce1fb1168e7f146"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d1-FKoNANyjYJwifubALPbNE9rOQnc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 04:09:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"_id\": \"636429152ce1fb1168e7f146\",\n        \"name\": \"User One\",\n        \"email\": \"userone@gmail.com\",\n        \"birthDate\": \"2000-12-14T18:00:00.000Z\",\n        \"profession\": \"Singer\",\n        \"profileImage\": \"uploads\\\\166750850144220211228_233157.jpg\"\n    }\n}"
+				},
+				{
+					"name": "Example: userone trying to access usertwo details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJvbmVAZ21haWwuY29tIiwidXNlcklEIjoiNjM2NDI5MTUyY2UxZmIxMTY4ZTdmMTQ2IiwiaWF0IjoxNjY3NTM1Nzc3LCJleHAiOjE2Njc1MzkzNzd9.fNH4LNZDevpBHA3R9mi9eXC8haFF2-GBoS9VpA7AiC0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/6364926fd65068b9e7ded8f8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"6364926fd65068b9e7ded8f8"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-CBl0oQSAEMdHJF+cplIZOguoEf0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 04:23:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Forbidded, You must be a valid user !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update User Profile Details",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRwQGdtYWlsLmNvbSIsInVzZXJJRCI6IjYzNjQyOTE1MmNlMWZiMTE2OGU3ZjE0NiIsImlhdCI6MTY2NzUzNzYxOCwiZXhwIjoxNjY3NTQxMjE4fQ.Ss4OBEf2-BeyiCoQ4batI-fe5tf3on-h7UnNSJL5oBY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \" Phuentsho Dema\",\r\n    \"email\": \"pd@gmail.com\",\r\n    \"birthDate\": \"07-10-1998\",\r\n    \"profession\": \"Chef\",\r\n    \"password\": \"Phuentsho@pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"_id"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Logged In User Updating his Details",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJvbmVAZ21haWwuY29tIiwidXNlcklEIjoiNjM2NDI5MTUyY2UxZmIxMTY4ZTdmMTQ2IiwiaWF0IjoxNjY3NTM2MDk5LCJleHAiOjE2Njc1Mzk2OTl9.cj231V6JYMk1dwrSfyk_cWZPNXVMVvjOQuqN3RXJrPQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Roba Nath Basnet\",\r\n    \"email\": \"robanbth@gmail.com\",\r\n    \"birthDate\": \"07-10-1999\",\r\n    \"profession\": \"Junior Developer\",\r\n    \"password\": \"Roba@pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/636429152ce1fb1168e7f146",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"636429152ce1fb1168e7f146"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-amTpUXss9mM+5IihxmbAPeGGaHI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 04:32:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User Updated Sucessfully\"\n}"
+				},
+				{
+					"name": "One User Trying to Update Other User's Details",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJvbmVAZ21haWwuY29tIiwidXNlcklEIjoiNjM2NDI5MTUyY2UxZmIxMTY4ZTdmMTQ2IiwiaWF0IjoxNjY3NTM2MDk5LCJleHAiOjE2Njc1Mzk2OTl9.cj231V6JYMk1dwrSfyk_cWZPNXVMVvjOQuqN3RXJrPQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tshering Dorji\",\r\n    \"email\": \"tdoeji@gmail.com\",\r\n    \"birthDate\": \"07-10-2000\",\r\n    \"profession\": \"Artist\",\r\n    \"password\": \"Tshering@pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/6364926fd65068b9e7ded8f8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"6364926fd65068b9e7ded8f8"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-CBl0oQSAEMdHJF+cplIZOguoEf0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 04:35:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Forbidded, You must be a valid user !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete User Account",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRwQGdtYWlsLmNvbSIsInVzZXJJRCI6IjYzNjQyOTE1MmNlMWZiMTE2OGU3ZjE0NiIsImlhdCI6MTY2NzUzNzYxOCwiZXhwIjoxNjY3NTQxMjE4fQ.Ss4OBEf2-BeyiCoQ4batI-fe5tf3on-h7UnNSJL5oBY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"_id"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Logged In User Deleting His User Account",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRwQGdtYWlsLmNvbSIsInVzZXJJRCI6IjYzNjQyOTE1MmNlMWZiMTE2OGU3ZjE0NiIsImlhdCI6MTY2NzUzNzYxOCwiZXhwIjoxNjY3NTQxMjE4fQ.Ss4OBEf2-BeyiCoQ4batI-fe5tf3on-h7UnNSJL5oBY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/636429152ce1fb1168e7f146",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"636429152ce1fb1168e7f146"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-oF9SEazkrUAZT1Iwa3GZQV32USk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 04:59:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User Deletion Successful\"\n}"
+				},
+				{
+					"name": "Logged In User Trying To Delete The Other User Account",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRwQGdtYWlsLmNvbSIsInVzZXJJRCI6IjYzNjQyOTE1MmNlMWZiMTE2OGU3ZjE0NiIsImlhdCI6MTY2NzUzNzYxOCwiZXhwIjoxNjY3NTQxMjE4fQ.Ss4OBEf2-BeyiCoQ4batI-fe5tf3on-h7UnNSJL5oBY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/636429152ce1fb1168e7f146",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"636429152ce1fb1168e7f146"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Allow-Control-Allow_Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-CBl0oQSAEMdHJF+cplIZOguoEf0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Nov 2022 04:55:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Forbidded, You must be a valid user !\"\n}"
+				}
+			]
+		}
+	]
+}
