@@ -284,7 +284,7 @@ export default function ProfilePage() {
 													<Flowbite.Label htmlFor="Password" value="Password" />
 												</div>
 												<Flowbite.TextInput
-													type="text"
+													type="password"
 													placeholder="Password"
 													name="password"
 													onBlur={handleBlur}
